@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'EazzyCare-public',
+  appId: 'io.afiabora.eazzycare',
+  appName: 'EazzyCare',
   webDir: 'www',
   server: {
     androidScheme: 'https'
