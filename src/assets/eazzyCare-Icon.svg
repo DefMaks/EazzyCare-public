@@ -1,0 +1,36 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" width="2000" height="2000">
+	<title>New Project</title>
+	<defs>
+		<image  width="2000" height="2000" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB9AAAAfQAQMAAACg9lY6AAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAH9SURBVHic7cEBDQAAAMKg909tDjegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeDapWQABp8YNoQAAAABJRU5ErkJggg=="/>
+		<linearGradient id="g1" x1="1197.4" y1="940" x2="1628.3" y2="940" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#bccf00"/>
+			<stop offset="1" stop-color="#009ed7"/>
+		</linearGradient>
+		<linearGradient id="g2" x1="166" y1="1000" x2="1829.5" y2="1000" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#bccf00"/>
+			<stop offset=".68" stop-color="#00a5ae"/>
+			<stop offset="1" stop-color="#006272"/>
+		</linearGradient>
+		<linearGradient id="g3" x1="568.4" y1="160.8" x2="1386.7" y2="160.8" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#bccf00"/>
+			<stop offset=".68" stop-color="#00a5ae"/>
+			<stop offset="1" stop-color="#006272"/>
+		</linearGradient>
+		<linearGradient id="g4" x1="367.2" y1="160.8" x2="1628.3" y2="160.8" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#bccf00"/>
+			<stop offset=".68" stop-color="#00a5ae"/>
+			<stop offset="1" stop-color="#006272"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+		.s2 { fill: url(#g3) } 
+		.s3 { fill: url(#g4) } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<path id="Layer" class="s0" d="m1628.3 1000c0 20.9-1 41.5-3 61.9h-427.9v-123.8h303.3c-5.1-41.8-15.3-81.9-29.9-119.9h130.7c11.7 38.5 19.7 78.7 23.8 119.9 2 20.4 3 41 3 61.9z"/>
+	<path id="Layer" fill-rule="evenodd" class="s1" d="m997.7 1831.7c-459.9 0-831.7-371.8-831.7-831.7 0-459.9 371.8-831.7 831.7-831.7 460 0 831.7 371.8 831.7 831.7 0 459.9-371.7 831.7-831.7 831.7zm708-831.7c0-391.5-316.5-708-708-708-391.5 0-707.9 316.5-707.9 708 0 391.5 316.4 708 707.9 708 391.5 0 708-316.5 708-708z"/>
+	<path id="Layer" class="s2" d="m997.7 1305.6c-168.5 0-305.6-137.1-305.6-305.6 0-168.5 137.1-305.6 305.6-305.6 100.5 0 189.8 48.7 245.5 123.8h143.4c-68.5-146.1-217.1-247.6-388.9-247.6-236.7 0-429.4 192.6-429.4 429.4 0 236.8 192.6 429.4 429.4 429.4 171.8 0 320.4-101.4 388.9-247.6h-143.4c-55.7 75.1-145.1 123.8-245.5 123.8z"/>
+	<path id="Layer" class="s3" d="m997.7 938.1h503c-5.1-41.8-15.3-81.9-29.9-119.9-73.2-190-257.7-325-473.1-325-279.3 0-506.7 227.3-506.7 506.8 0 279.5 227.4 506.8 506.7 506.8 215.4 0 399.9-135 473.1-325h130.7c-78.2 259.4-319.3 448.8-603.8 448.8-347.7 0-630.5-282.9-630.5-630.6 0-347.7 282.8-630.6 630.5-630.6 284.5 0 525.7 189.4 603.8 448.8 11.7 38.5 19.7 78.7 23.8 119.9 2 20.4 3 41 3 61.9 0 20.9-1 41.5-3 61.9h-627.6z"/>
+</svg>
