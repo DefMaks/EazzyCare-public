@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>intro</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">intro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <swiper-container #intro pagination="true" (afterinit)="swiperReady()" (slidechange)="swiperSlideChange($event)" centered-slides="true">
+
+    <swiper-slide *ngFor="let item of introMessages">
+      <img [src]="item.image" alt="">
+      <div class="meta-message">
+        <div class="meta-message-wrapper">
+          <div class="div">
+            <ion-text color="light">
+              <h2 [innerHTML]="item.message"></h2>
+            </ion-text>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <!-- <swiper-slide>2</swiper-slide> -->
+  </swiper-container>
+
+  <div class="intro-logo">
+    <img [src]="logo" alt="">
+  </div>
+
+  <!-- <ion-fab *ngIf="displayNext" mode="ios" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button mode="ios" size="small" color="teal">
+      <ion-icon name="skip-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  <ion-button *ngIf="displayNext" mode="ios" size="small" color="teal" shape="round" slot="fixed" (click)="skip()">
+    <!-- <ion-icon slot="start" color="warning" name="skip-forward"></ion-icon> -->
+    Sauter
+  </ion-button>
+
 </ion-content>
