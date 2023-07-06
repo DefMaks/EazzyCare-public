@@ -12,7 +12,7 @@
           [class]="signup ? 'selected':'no-selected'"  (click)="switchOperation()">Je crée un compte</span> </div>
     </div>
     
-    <form (ngSubmit)="onSubmit()" [@inOutAnimation] [formGroup]="loginForm" *ngIf="login">
+    <form (ngSubmit)="onSubmit('login')" [@inOutAnimation] [formGroup]="loginForm" *ngIf="login">
       
       <div class="form-field">
       <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
@@ -31,7 +31,7 @@
       </ion-row>
     </form>
     
-    <form (ngSubmit)="onSubmit()" [@inOutAnimation] [formGroup]="signupForm" *ngIf="signup">
+    <form (ngSubmit)="onSubmit('signup')" [@inOutAnimation] [formGroup]="signupForm" *ngIf="signup">
       
       <div class="form-field">
         <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
@@ -53,6 +53,7 @@
         </ion-col>
       </ion-row>
     </form>
+    <div class="ion-padding ion-text-center" (click)="skip()">Skip Demo</div>
   </div>
 
 </ion-content>

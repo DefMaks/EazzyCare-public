@@ -25,3 +25,63 @@
 #container a {
   text-decoration: none;
 }
+
+
+#prime-toolbar {
+
+  --min-height: 60px;
+
+  #prime-row {
+    // margin-top: 10px;
+  }
+}
+
+#second-toolbar {
+  --border-width: 0px;
+  // backdrop-filter: blur(5px);
+  // --background: transparent;
+  --background: #ffffff;
+  // --opacity: 0.5;
+
+  ion-title.ios {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+ion-badge {
+  position: absolute;
+  --padding-bottom: 3px;
+  --padding-end: 3px;
+  --padding-start: 3px;
+  --padding-top: 2px;
+  font-size: 10px;
+  top: 0px;
+  right: -6px;
+  border: 1px solid;
+}
+
+// ion-toolbar {
+//   --background: #ffffff;
+//   --border-color: #3880ff;
+//   --border-style: solid;
+//   --border-width: 8px;
+//   --color: #3880ff;
+//   --min-height: 56px;
+//   --opacity: 1;
+//   --padding-bottom: 4px;
+//   --padding-end: 4px;
+//   --padding-start: 4px;
+//   --padding-top: 4px;
+// }
+
+ion-toolbar {
+  ion-badge {
+    --background: #ffffff;
+    --color: #3880ff;
+    --padding-bottom: 4px;
+    --padding-end: 4px;
+    --padding-start: 4px;
+    --padding-top: 4px;
+  }
+}

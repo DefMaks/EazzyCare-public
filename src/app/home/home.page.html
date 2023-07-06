@@ -1,20 +1,117 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header mode="ios" [translucent]="true">
+  <ion-toolbar id="second-toolbar">
     <ion-title>
-      Blank
+        <ion-row class="ion-no-padding ion-align-items-center">
+          <ion-col class="ion-text-start" size="6">
+            <ion-avatar>
+              <img alt="rhino standing near grass"
+              [src]="logo" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col class="ion-text-end" size="6">
+            <ion-button size="small" fill="clear" (click)="openMenu()">
+              <ion-icon slot="icon-only" name="notifications"></ion-icon>
+              <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
+            </ion-button>
+            <ion-button size="small" fill="clear" (click)="openMenu()">
+              <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+  <ion-header mode="ios" collapse="condense">
+    <ion-toolbar id="prime-toolbar">
+      <ion-title size="large">
+        <!-- <ion-grid class="ion-padding-vertical"> -->
+          <ion-row id="prime-row" class="ion-no-padding ion-align-items-center">
+            <ion-col size="6" class="ion-text-left">
+              <ion-avatar>
+                <img alt="rhino standing near grass"
+                [src]="logo" />
+              </ion-avatar>
+
+            </ion-col> 
+            <ion-col size="6" class="ion-text-right">
+              <ion-button size="small" fill="clear"  (click)="openMenu()">
+                <ion-icon slot="icon-only" color="dark" name="notifications"></ion-icon>
+                <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
+              </ion-button>
+              <ion-button size="small" fill="clear" (click)="openMenu()">
+                <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        <!-- </ion-grid> -->
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+
+  <!-- <ion-grid class="ion-padding-vertical">
+          <ion-row class="ion-no-padding">
+            <ion-col size="6" class="ion-text-left">
+              <ion-avatar>
+                <img alt="rhino standing near grass"
+                  src="https://images.unsplash.com/flagged/photo-1556983257-71fddc36bc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" />
+              </ion-avatar>
+        
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-button size="small" fill="clear" (click)="openMenu()">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+                <ion-badge class="notification" color="teal" mode="ios">42</ion-badge>
+              </ion-button>
+              <ion-button size="small" fill="clear" (click)="openMenu()">
+                <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid> -->
+
+  <!-- <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+   
+  </div> -->
+
+  <div class="ion-padding">
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
+
+    <div class="ion-margin-vertical">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A et facilis error. Eum assumenda totam mollitia quod
+      ipsam modi praesentium, quae ex officia ipsa debitis itaque voluptatem, cum quibusdam atque?
+    </div>
   </div>
 </ion-content>

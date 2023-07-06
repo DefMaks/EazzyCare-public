@@ -64,8 +64,12 @@ export class LoginPage implements OnInit {
     this.signup = !this.signup
   }
 
-  onSubmit(){
+  onSubmit(typeSubmit: string){
+    // this.router.navigateByUrl("/home")
+  }
 
+  skip(){
+    this.router.navigateByUrl("/home")
   }
 
 }
