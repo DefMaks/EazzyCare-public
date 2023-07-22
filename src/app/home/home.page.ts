@@ -10,6 +10,34 @@ export class HomePage {
 
   logo = environment.appLogo
 
+  moods = [
+    {
+      mood: 'nerveux',
+      icon: 'assets/emojis/angry.svg',
+      color: 'red'
+    },
+    {
+      mood: 'triste',
+      icon: 'assets/emojis/sad.svg',
+      color: 'orange'
+    },
+    {
+      mood: 'neutre',
+      icon: 'assets/emojis/neutral.svg',
+      color: 'caribbean'
+    },
+    {
+      mood: 'zen',
+      icon: 'assets/emojis/happy.svg',
+      color: 'junglegreen'
+    },
+    {
+      mood: '(Très) heureux',
+      icon: 'assets/emojis/so-happy.svg',
+      color: 'yellowgreen'
+    },
+  ]
+
   constructor() {}
 
 

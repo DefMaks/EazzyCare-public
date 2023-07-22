@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GreetingService } from './services/greeting.service';
 import { AppGlobals } from './services/app.global';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AppComponent {
   constructor(
     private greeting: GreetingService,
-    public appGlobal: AppGlobals
+    public appGlobal: AppGlobals,
+    private readonly supabase: AuthService
   ) {
     
   }

@@ -1,23 +1,23 @@
 <ion-header mode="ios" [translucent]="true">
-  <ion-toolbar id="second-toolbar">
+  <ion-toolbar color="light" id="second-toolbar">
     <ion-title>
-        <ion-row class="ion-no-padding ion-align-items-center">
-          <ion-col class="ion-text-start" size="6">
-            <ion-avatar>
-              <img alt="rhino standing near grass"
-              [src]="logo" />
-            </ion-avatar>
-          </ion-col>
-          <ion-col class="ion-text-end" size="6">
-            <ion-button size="small" fill="clear" (click)="openMenu()">
-              <ion-icon slot="icon-only" name="notifications"></ion-icon>
-              <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
-            </ion-button>
-            <ion-button size="small" fill="clear" (click)="openMenu()">
-              <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
+      <ion-row class="ion-no-padding ion-align-items-center">
+        <ion-col class="ion-text-start" size="6">
+          <ion-avatar>
+            <img alt="rhino standing near grass" [src]="logo" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col class="ion-text-end" size="6">
+          <ion-button size="small" fill="clear" (click)="openMenu()">
+            <ion-icon slot="icon-only" name="notifications"></ion-icon>
+            <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
+          </ion-button>
+          <!-- <ion-button size="small" fill="clear" (click)="openMenu()"> -->
+          <ion-button size="small" fill="clear" id="bottom-end">
+            <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -25,81 +25,150 @@
   <ion-header mode="ios" collapse="condense">
     <ion-toolbar id="prime-toolbar">
       <ion-title size="large">
-        <!-- <ion-grid class="ion-padding-vertical"> -->
-          <ion-row id="prime-row" class="ion-no-padding ion-align-items-center">
-            <ion-col size="6" class="ion-text-left">
-              <ion-avatar>
-                <img alt="rhino standing near grass"
-                [src]="logo" />
-              </ion-avatar>
+        
+        <ion-row id="prime-row" class="ion-no-padding ion-align-items-center">
+          <ion-col size="6" class="ion-text-left">
+            <ion-avatar>
+              <img alt="rhino standing near grass" [src]="logo" />
+            </ion-avatar>
 
-            </ion-col> 
-            <ion-col size="6" class="ion-text-right">
-              <ion-button size="small" fill="clear"  (click)="openMenu()">
-                <ion-icon slot="icon-only" color="dark" name="notifications"></ion-icon>
-                <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
-              </ion-button>
-              <ion-button size="small" fill="clear" (click)="openMenu()">
-                <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        <!-- </ion-grid> -->
+          </ion-col>
+          <ion-col size="6" class="ion-text-right">
+            <ion-button size="small" fill="clear" (click)="openMenu()">
+              <ion-icon slot="icon-only" color="dark" name="notifications"></ion-icon>
+              <ion-badge mode="ios" class="notification" color="teal" mode="ios">42</ion-badge>
+            </ion-button>
+            <!-- <ion-button size="small" fill="clear" (click)="openMenu()"> -->
+            <ion-button size="small" fill="clear" id="bottom-end2">
+              <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <ion-popover trigger="bottom-end" side="bottom" alignment="end">
+    <ng-template>
+      <ion-content class="ion-padding">Hello World!</ion-content>
+    </ng-template>
+  </ion-popover>
 
-  <!-- <ion-grid class="ion-padding-vertical">
-          <ion-row class="ion-no-padding">
-            <ion-col size="6" class="ion-text-left">
-              <ion-avatar>
-                <img alt="rhino standing near grass"
-                  src="https://images.unsplash.com/flagged/photo-1556983257-71fddc36bc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" />
-              </ion-avatar>
-        
-            </ion-col>
-            <ion-col size="6" class="ion-text-right">
-              <ion-button size="small" fill="clear" (click)="openMenu()">
-                <ion-icon slot="icon-only" name="add"></ion-icon>
-                <ion-badge class="notification" color="teal" mode="ios">42</ion-badge>
-              </ion-button>
-              <ion-button size="small" fill="clear" (click)="openMenu()">
-                <ion-icon slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid> -->
-
-  <!-- <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-
-   
-  </div> -->
+  <ion-popover trigger="bottom-end2" side="bottom" alignment="end">
+    <ng-template>
+      <ion-content class="ion-padding">Hello World!</ion-content>
+    </ng-template>
+  </ion-popover>
 
   <section>
     <ion-row class="ion-align-self-center ion-align-items-center">
       <ion-col size="6">
-        <ion-card  class="card-1" color="medium">
+        <ion-card class="card-1" color="medium">
           <ion-card-header>
             <ion-card-title>+</ion-card-title>
           </ion-card-header>
-          
+
           <ion-card-content>
-            
-      <ion-text color="light">
-        <h2 class="ion-no-margin ion-padding-bottom">Souscrire à un service</h2>
-      </ion-text>
+
+            <ion-text color="light">
+              <h2 class="ion-no-margin ion-padding-bottom">Souscrire à un service</h2>
+            </ion-text>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card>
-          FG
+        <ion-card class="card-2" color="light" >
+          <img src="assets/textures/eazzycare-user.png" alt="">
+          <!-- <div>Joyce Finunu</div> -->
+          <div class="infos">
+            <div>
+              <ion-chip color="caribbean" mode="ios" outline="true">
+                <ion-label>Mes Services : 10</ion-label>
+              </ion-chip>
+            </div>
+            <div>
+              <ion-chip color="caribbean" mode="ios" outline="true">
+                <ion-icon mode="ios" color="junglegreen" name="clipboard"></ion-icon>
+                <ion-label>En cours : 10</ion-label>
+              </ion-chip>
+            </div>
+            <div>
+              <ion-chip color="caribbean" mode="ios" outline="true">
+                <ion-icon mode="ios" color="orange" name="clipboard"></ion-icon>
+                <ion-label>Expirés : 0</ion-label>
+              </ion-chip>
+            </div>
+            
+            <!-- <div class="" style="margin-top: 4px;">
+              <strong>Joyce Finunu</strong>
+            </div> -->
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
+  </section>
+
+  <section>
+    <ion-card mode="ios">
+      <ion-text color="teal">
+        <h4 class="ion-text-center">Comment vous sentez-vous aujourd'hui ?</h4>
+      </ion-text>
+      <div class="mood-block">
+        <ul class="mood">
+          <li *ngFor="let mood of moods">
+            <ion-icon [color]="mood.color" [src]="mood.icon"></ion-icon><br>
+            <small> {{mood.mood}} </small>
+          </li>
+        </ul>
+      </div>
+    </ion-card>
+  </section>
+
+  <section>
+    <ion-row id="tool-bar" class="ion-align-self-center ion-align-items-center">
+      <ion-col size="4" class="ion-text-center">
+        <ion-button fill="outline" color="junglegreen" id="call-search" >
+          <ion-icon name="search"></ion-icon>
+        </ion-button><br>
+        <ion-label>
+          <ion-text color="junglegreen">
+            <small>Trouver prestataire</small>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+
+      <ion-col size="4" class="ion-text-center">
+        <ion-button fill="outline" color="junglegreen" >
+          <ion-icon src="assets/hospital-sign.svg"></ion-icon>
+        </ion-button><br>
+        <ion-label>
+          <ion-text color="junglegreen">
+            <small>Hôpitaux</small>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+
+      <ion-col size="4" class="ion-text-center">
+        <ion-button fill="outline" color="junglegreen" >
+          <ion-icon src="assets/insurance.svg"></ion-icon>
+        </ion-button><br>
+        <ion-label>
+          <ion-text color="junglegreen">
+            <small>Assureurs</small>
+          </ion-text>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+  <ion-popover trigger="call-search" side="right" alignment="start">
+    <ng-template>
+      <!-- <ion-content class="ion-padding"> -->
+        <ion-searchbar mode="ios"  placeholder="Trouver un prestataire"></ion-searchbar>
+      <!-- </ion-content> -->
+    </ng-template>
+  </ion-popover>
   </section>
 
   <div class="ion-padding">

@@ -29,6 +29,8 @@ export class AuthService {
       environment.supabaseKey
     );
 
+    console.log(this.supabase)
+
     this.supabase.auth.onAuthStateChange((event, sess: any) => {
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
         console.log('SET USER');
@@ -41,7 +43,6 @@ export class AuthService {
         this.currentUser.next(false);
       }
     });
-
     // Trigger initial session load
     // console.log(5);
     // this.loadUser();
@@ -53,9 +54,10 @@ export class AuthService {
     }, 3500);
   }
 
+
   async assignations(){
     this.getVendors();
-
+    console.log(this.appGlobal)
   }
 
   async loadUser() {
@@ -120,6 +122,7 @@ export class AuthService {
         // .and('isOnline.eq.true, isDriver.eq.true')
         // .match({ isOnline: true, isDriver: true })
         .then((result) => {
+          // console.log(result)
           this.appGlobal.vendors = result.data
           const cm = this.appGlobal.vendors.filter((item: any) =>{
             if(item.type.id == 1){
@@ -161,6 +164,5 @@ export class AuthService {
     // console.log(d);
     return d;
   }
-
   
 }
