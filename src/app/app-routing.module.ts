@@ -22,6 +22,26 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     // canLoad: [IntroGuard, AutoLoginGuard] // Check if we should show the introduction or forward to inside
   },
+  {
+    path: 'vendors',
+    loadChildren: () => import('./pages/vendors/vendors.module').then( m => m.VendorsPageModule)
+  },
+  {
+    path: 'vendor/:part',
+    loadChildren: () => import('./pages/vendors/vendors.module').then( m => m.VendorsPageModule),
+    data: {
+      pagetype: 'search',
+      layoutType: 'listOnly'
+    }
+  },
+  {
+    path: 'search-vendor',
+    loadChildren: () => import('./pages/vendors/vendors.module').then( m => m.VendorsPageModule),
+    data: {
+      pagetype: 'search',
+      layoutType: 'searchForm'
+    }
+  },
 ];
 
 @NgModule({

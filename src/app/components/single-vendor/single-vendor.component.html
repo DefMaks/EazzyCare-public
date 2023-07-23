@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" id="single-vendor">
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="home" mode="md" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button mode="ios" id="menu-vendors" (click)="openMenu($event)">
+        <ion-icon class="menu-icon" color="light" slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <section class="ion-padding">
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-item lines="none">
+          <ion-avatar>
+            <img [src]="singleVendor?.logo" />
+          </ion-avatar>
+          <ion-label>Item Avatar</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+  </section>
+
+  <div class="swiper-body">
+    <section id="swiper-section">
+      
+      
+
+      
+      <!-- 
+      <swiper-container #swipepackages class="mySwiper"
+      (afterinit)="swiperReady()"
+      (slidechange)="swiperSlideChange($event)"
+      >
+
+        <swiper-slide *ngFor="let item of packages; index as i">
+          <ion-card [color]="colors[i]" mode="ios">
+            <div class="meta-message">
+              <div class="meta-message-wrapper">
+                <div class="div">
+                  <ion-text color="light">
+                    <h2 [innerHTML]="item.name"></h2>
+                  </ion-text>
+                </div>
+              </div>
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+      </swiper-container>
+    -->
+
+    </section>
+  </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="aqua">
+    <ion-icon color="light" name="information"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="light" (click)="writeMessage()">
+      <ion-icon color="aqua" name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light" (click)="call()">
+      <ion-icon color="aqua" name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

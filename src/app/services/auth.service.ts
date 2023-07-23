@@ -29,7 +29,7 @@ export class AuthService {
       environment.supabaseKey
     );
 
-    console.log(this.supabase)
+    // console.log(this.supabase)
 
     this.supabase.auth.onAuthStateChange((event, sess: any) => {
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
@@ -50,6 +50,7 @@ export class AuthService {
     setTimeout(() => {
       console.log('Live reloads open');
       this.listenVendrors();
+    console.log(this.appGlobal)
       // this.appGlobal.serverUpdate = false;
     }, 3500);
   }
@@ -57,7 +58,7 @@ export class AuthService {
 
   async assignations(){
     this.getVendors();
-    console.log(this.appGlobal)
+    return this.appGlobal
   }
 
   async loadUser() {

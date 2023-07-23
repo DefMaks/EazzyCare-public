@@ -19,5 +19,18 @@ export class AppGlobals {
   | undefined
   typeVendor: any = [];
   // allUsers: any = null;
+
+  public links = [
+    {
+      title: 'Home',
+      icon: '',
+      url: '/home'
+    },
+    {
+      title: 'Vendors',
+      icon: '',
+      url: '/vendors'
+    },
+  ]
   // allUsers: any = null;
 }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { AppGlobals } from '../services/app.global';
+import { PopoverController } from '@ionic/angular';
+import { MenuComponent } from '../components/menu/menu.component';
 
 @Component({
   selector: 'app-home',
@@ -38,11 +41,28 @@ export class HomePage {
     },
   ]
 
-  constructor() {}
+  roleMsg!: string;
+
+  constructor(
+    public appGlobal: AppGlobals,
+    private popover: PopoverController
+  ) {}
 
 
-  openMenu(){
-    
+  async openMenu(e: Event) {
+    const popover = await this.popover.create({
+      component: MenuComponent,
+      event: e,
+    });
+
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    this.roleMsg = `Popover dismissed with role: ${role}`;
+  }
+
+  async closeMenu(ev: Event){
+      await this.popover.dismiss();
   }
 
 }

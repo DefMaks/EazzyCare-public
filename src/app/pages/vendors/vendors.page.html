@@ -1,0 +1,108 @@
+<ng-container *ngIf="!isSingle; else isSingle">
+  <ion-header [translucent]="true" class="ion-no-border" mode="ios">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home" mode="md" icon="chevron-back"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button id="menu-vendors" (click)="openMenu($event)">
+          <ion-icon class="menu-icon" slot="icon-only" src="assets/menu-alt-01-svgrepo-com.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content [fullscreen]="true">
+    <ion-segment mode="ios" [value]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+      <ion-segment-button value="hospital">
+        <ion-label>Hôpitaux</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="insurance">
+        <ion-label>Assureurs</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ng-container [ngSwitch]="selectedSegment">
+      <section *ngSwitchCase="'hospital'" class="list-vendors">
+        <ion-item *ngFor="let item of appGlobal?.cm" lines="none">
+          <ion-avatar slot="start">
+            <img [src]="item?.logo" />
+          </ion-avatar>
+          <ion-label>
+            <p>
+              <strong>
+                {{item.nom}}
+              </strong>
+            </p>
+            <p>{{item.ville}}</p>
+            <p>Subscription: 0</p>
+          </ion-label>
+        </ion-item>
+      </section>
+      <section *ngSwitchCase="'insurance'" class="list-vendors">
+        <ion-item *ngFor="let item of appGlobal?.insure" lines="none">
+          <ion-avatar slot="start">
+            <img [src]="item?.logo" />
+          </ion-avatar>
+          <ion-label>
+            <p>
+              <strong>
+                {{item.nom}}
+              </strong>
+            </p>
+            <p>{{item.ville}}</p>
+            <p>Subscription: 0</p>
+          </ion-label>
+        </ion-item>
+      </section>
+    </ng-container>
+
+
+    <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]" mode="ios">
+      <ng-template>
+        <ion-searchbar placeholder="Filter Pizza" (ionInput)="onSearchChange($event)" [debounce]="1200"
+          showCancelButton="always"></ion-searchbar>
+        <div class="ion-padding">
+          <ng-container *ngIf="searchOutputGotResults; else noResults">
+            <section class="list-searched-vendors">
+              <small>Résultats</small>
+
+              <ion-item *ngFor="let item of searchOutput" lines="none">
+                <ion-avatar slot="start">
+                  <img [src]="item?.logo" />
+                </ion-avatar>
+                <ion-label>
+                  <p>
+                    <strong>
+                      {{item.nom}}
+                    </strong>
+                  </p>
+                  <p>{{item.ville}}</p>
+                  <p>Subscription: 0</p>
+                </ion-label>
+              </ion-item>
+
+            </section>
+          </ng-container>
+          <ng-template #noResults>
+            {{searchOutput}}</ng-template>
+        </div>
+      </ng-template>
+    </ion-modal>
+
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="teal" id="open-modal">
+        <ion-icon name="search"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+</ng-container>
+
+
+<ng-template #isSingle>
+  <!-- <ion-header [translucent]="true" id="single-vendor-header" class="ion-no-border" mode="ios">
+  </ion-header> -->
+  <app-single-vendor [appGlobal]="appGlobal" [singleVendor]="singleVendor"></app-single-vendor>
+
+</ng-template>
