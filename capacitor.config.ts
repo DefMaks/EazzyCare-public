@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.afiabora.eazzycare',
+  appId: 'io.afiabora.eazzycarec',
   appName: 'EazzyCare',
   webDir: 'www',
   server: {

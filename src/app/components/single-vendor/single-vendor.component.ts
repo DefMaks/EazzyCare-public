@@ -16,11 +16,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { MenuComponent } from '../menu/menu.component';
 // register();
+// import 'keen-slider/keen-slider.min.css'
+import KeenSlider, { KeenSliderInstance } from 'keen-slider';
 
 @Component({
   selector: 'app-single-vendor',
   templateUrl: './single-vendor.component.html',
-  styleUrls: ['./single-vendor.component.scss'],
+  styleUrls: ['./single-vendor.component.scss',"../../../../node_modules/keen-slider/keen-slider.min.css",
+],
   standalone: true,
   // encapsulation: ViewEncapsulation.None,
   imports: [CommonModule, FormsModule, IonicModule],
@@ -32,13 +35,16 @@ export class SingleVendorComponent implements OnInit {
 
   @ViewChild('swipepackages') swiperRef: ElementRef | undefined;
   // intro?: Swiper;
+  @ViewChild("sliderRef")
+  sliderRef!: ElementRef<HTMLElement>;
+  slider!: KeenSliderInstance
 
   colors = ['junglegreen', 'verdigris', 'caribbean', 'teal'];
 
   packages = [
     {
       name: 'Kimya',
-      color: '',
+      description: 'Ce package est idéal pour une personne',
       services: [
         {
           name: '',
@@ -49,7 +55,7 @@ export class SingleVendorComponent implements OnInit {
     },
     {
       name: 'Pepele',
-      color: '',
+      description: 'Ce prestataire offre un package de services à faire sentir insouciant',
       services: [
         {
           name: '',
@@ -60,7 +66,7 @@ export class SingleVendorComponent implements OnInit {
     },
     {
       name: 'Bomengo',
-      color: '',
+      description: 'Ne vous souciez plus de rien car ce package ne fera que votre bonheur',
       services: [
         {
           name: '',
@@ -76,7 +82,23 @@ export class SingleVendorComponent implements OnInit {
   constructor(private popover: PopoverController) {}
 
   ngOnInit() {
+    setTimeout(() => {
+      this.slider = new KeenSlider(this.sliderRef.nativeElement,{
+        initial: 1,
+        slides: {
+          origin: "center",
+          perView: 1.5,
+          spacing: 15,
+        },
+      })
+    }, 400);
+  }
 
+  ionWillEnter() {
+  }
+
+  ngOnDestroy() {
+    if (this.slider) this.slider.destroy()
   }
 
   async openMenu(e: Event) {
@@ -107,8 +129,7 @@ export class SingleVendorComponent implements OnInit {
     return await window.open(url, '_blank');
   }
 
-  ngAfterViewInit() {
-  }
+  ngAfterViewInit() {}
 
   swiperSlideChange($event: any) {
     // throw new Error('Method not implemented.');

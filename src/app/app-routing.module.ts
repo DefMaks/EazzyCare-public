@@ -42,6 +42,14 @@ const routes: Routes = [
       layoutType: 'searchForm'
     }
   },
+
+  {
+    path: 'single-vendor/:id',
+    loadChildren: () => import('./pages/vendors/vendors.module').then( m => m.VendorsPageModule),
+    data: {
+      isSingle: 'single',
+    }
+  },
 ];
 
 @NgModule({

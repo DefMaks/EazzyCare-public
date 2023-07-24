@@ -1,4 +1,4 @@
-<ng-container *ngIf="!isSingle; else isSingle">
+<ng-container *ngIf="isNotSingle; else isSingle">
   <ion-header [translucent]="true" class="ion-no-border" mode="ios">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -24,7 +24,7 @@
     </ion-segment>
     <ng-container [ngSwitch]="selectedSegment">
       <section *ngSwitchCase="'hospital'" class="list-vendors">
-        <ion-item *ngFor="let item of appGlobal?.cm" lines="none">
+        <ion-item *ngFor="let item of appGlobal?.cm" lines="none" [routerLink]="['/single-vendor/'+item.id]" routerLinkActive="router-link-active" >
           <ion-avatar slot="start">
             <img [src]="item?.logo" />
           </ion-avatar>
@@ -40,7 +40,7 @@
         </ion-item>
       </section>
       <section *ngSwitchCase="'insurance'" class="list-vendors">
-        <ion-item *ngFor="let item of appGlobal?.insure" lines="none">
+        <ion-item *ngFor="let item of appGlobal?.insure" lines="none" [routerLink]="['/single-vendor/'+item.id]" routerLinkActive="router-link-active">
           <ion-avatar slot="start">
             <img [src]="item?.logo" />
           </ion-avatar>
@@ -60,14 +60,14 @@
 
     <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]" mode="ios">
       <ng-template>
-        <ion-searchbar placeholder="Filter Pizza" (ionInput)="onSearchChange($event)" [debounce]="1200"
+        <ion-searchbar placeholder="Trouver un prestataire" (ionInput)="onSearchChange($event)" [debounce]="1200"
           showCancelButton="always"></ion-searchbar>
         <div class="ion-padding">
           <ng-container *ngIf="searchOutputGotResults; else noResults">
             <section class="list-searched-vendors">
               <small>Résultats</small>
 
-              <ion-item *ngFor="let item of searchOutput" lines="none">
+              <ion-item *ngFor="let item of searchOutput" lines="none" [routerLink]="['/single-vendor/'+item.id]" routerLinkActive="router-link-active">
                 <ion-avatar slot="start">
                   <img [src]="item?.logo" />
                 </ion-avatar>

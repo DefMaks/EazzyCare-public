@@ -15,25 +15,61 @@
   <section class="ion-padding">
     <ion-row>
       <ion-col size="1"></ion-col>
-      <ion-col size="10">
-        <ion-item lines="none">
-          <ion-avatar>
-            <img [src]="singleVendor?.logo" />
-          </ion-avatar>
-          <ion-label>Item Avatar</ion-label>
-        </ion-item>
+      <ion-col size="10" class="ion-text-center">
+        <img [src]="singleVendor?.logo" width="70%" style="background: #fff; border-radius: 15px;" />
+        <p></p>
+        <ion-text color="light">
+          <h4>
+            {{singleVendor?.nom}}
+            <br>
+            <small>{{singleVendor?.type.nom}}</small>
+          </h4>
+        </ion-text>
       </ion-col>
       <ion-col size="1"></ion-col>
     </ion-row>
 
   </section>
 
-  <div class="swiper-body">
-    <section id="swiper-section">
-      
-      
+  <!-- <div class="swiper-body">
+    <section id="swiper-section"> -->
 
-      
+      <div #sliderRef class="keen-slider">
+        <div class="keen-slider__slide" *ngFor="let item of packages; index as i">
+          <ion-card color="transparent" mode="ios">
+            <div class="ion-padding">
+              <ion-text color="light" class="ion-text-center">
+                <h2 [innerHTML]="item.name"></h2>
+              </ion-text>
+              <div class="quick-details">
+                {{item.description}}
+              </div>
+            </div>
+            <p class="ion-padding"><strong>Services</strong> : {{item.services.length}} </p>
+            <p class="ion-padding price">{{item.prix}} <small>/{{item.period}} </small> </p>
+            <ion-button expand="block" [id]="'open-modal-'+i" color="light">
+              Détails
+            </ion-button>
+          </ion-card>
+
+
+          <ion-modal mode="ios" [trigger]="'open-modal-'+i">
+            <ng-template>
+              <ion-header [translucent]="true" mode="ios" class="ion-no-border">
+                <ion-toolbar color="transparent">
+                  <ion-title> {{item.name}} </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content color="caribbean" mode="ios" class="ion-padding">
+                Services list
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+        </div>
+      </div>
+
+
       <!-- 
       <swiper-container #swipepackages class="mySwiper"
       (afterinit)="swiperReady()"
@@ -57,8 +93,26 @@
       </swiper-container>
     -->
 
-    </section>
-  </div>
+    <!-- </section>
+  </div> -->
+
+  <!-- <ng-container *ngFor="let item of [].constructor(packages.length); index as i">
+
+
+    <ion-modal [trigger]="'open-modal-'+i"  >
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Welcome</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          Services list
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ng-container> -->
+
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">

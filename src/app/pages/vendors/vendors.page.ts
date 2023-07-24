@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
 import { AppGlobals } from 'src/app/services/app.global';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-vendors',
@@ -10,8 +11,8 @@ import { AppGlobals } from 'src/app/services/app.global';
   styleUrls: ['./vendors.page.scss'],
 })
 export class VendorsPage implements OnInit {
-  isSingle= true;
-  singleVendor!: any
+  isNotSingle: boolean = true;
+  singleVendor!: any;
   selectedItem!: string;
   items = [
     {
@@ -64,15 +65,21 @@ export class VendorsPage implements OnInit {
     if (this.router.snapshot.data) {
       // console.log(this.router.snapshot?.data['pagetype'])
       // this.pageData.layoutType = this.router.snapshot?.data['layoutType']
+      if (this.router.snapshot.data['isSingle']) {
+        this.isNotSingle = false;
+        const idC = this.router.snapshot.params['id']
+        console.log(idC);
+        const vend = this.appGlobal.vendors.filter(function (_item: { id: any; }){
+          return _item.id == idC
+        })
+        console.log(vend)
+        this.singleVendor = vend[0];
+      }
     }
     const param = this.router.snapshot.params;
     console.log(param);
     if (param['part'] != 'listHospitals') {
       this.selectedSegment = 'insurance';
-    }
-
-    if(this.isSingle){
-      this.singleVendor = this.appGlobal.vendors[0]
     }
   }
 
@@ -122,10 +129,9 @@ export class VendorsPage implements OnInit {
         }
         // this.searchOutputGotResults
       }, 600);
-    }
-    else{
+    } else {
       this.searchOutputGotResults = true;
-      this.searchOutput = null
+      this.searchOutput = null;
     }
   }
 }

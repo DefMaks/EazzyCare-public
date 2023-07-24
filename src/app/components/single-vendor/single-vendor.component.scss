@@ -1,3 +1,7 @@
+
+@import url('keen-slider/keen-slider.css');
+
+
 // SINGLE VENDOR LAYOUT
 #single-vendor-header {
   ion-toolbar {
@@ -133,14 +137,12 @@
 }
 
 #swiper-section{
+
+
+    
   swiper-container {
     width: 100%;
     height: 100%;
-
-    ion-card {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   swiper-slide {
@@ -170,4 +172,80 @@
   swiper-slide:nth-child(3n) {
     width: 40%;
   }
+}
+ion-card {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  border-radius: 15px;
+  padding: 0;
+  position: relative;
+  border: 2px solid var(--ion-color-aqua);
+
+  .quick-details{
+    height: 70px;
+    margin: auto 15px;
+    padding: 10px;
+    clear: both;
+    color: var(--ion-color-aqua);
+    font-size: 15px;
+  }
+  p{
+    padding: 10px;
+    margin: auto ;
+    clear: both;
+    text-align: center;
+    color: var(--ion-color-aqua);
+    font-size: 15px;
+
+    &.price{
+      font-weight: 600;
+      font-size: 30px;
+
+      small{
+        font-size: smaller;
+      }
+    }
+  }
+
+  ion-button {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    margin-bottom: -5px;
+    // --background: #3880ff;
+    // --background-activated: #3880ff;
+    // --background-activated-opacity: 1;
+    // --background-focused: #3880ff;
+    // --background-focused-opacity: 1;
+    // --background-hover: #3880ff;
+    // --background-hover-opacity: 1;
+    // --border-color: #3880ff;
+    // --border-radius: 15px;
+    // --border-style: solid;
+    // --border-width: 8px;
+    // --box-shadow: 10px 10px;
+    // --color: #ffffff;
+    // --color-activated: #ffffff;
+    // --color-focused: #ffffff;
+    // --color-hover: #ffffff;
+    // --opacity: 1;
+    // --padding-bottom: 4px;
+    // --padding-end: 4px;
+    // --padding-start: 4px;
+    // --padding-top: 4px;
+    --ripple-color: #1e1e1e;
+    --transition: background-color: 15ms linear;
+  }
+}
+
+ion-modal {
+  --border-radius: 10px;
+  --height: 70%;
+  --max-height: 70%;
+  --min-height: 70%;
+  --max-width: 80%;
+  --min-width: 80%;
+  --width: 80%;
 }
