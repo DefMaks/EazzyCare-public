@@ -5,7 +5,18 @@ const config: CapacitorConfig = {
   appName: 'EazzyCare',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 2000,
+      // androidScaleType: "CENTER_CROP",
+      backgroundColor: "002229",
+      launchAutoHide: true,
+      launchFadeOutDuration: 600,
+      splashFullScreen: true,
+      splashImmersive: true,
+    },
   }
 };
 
