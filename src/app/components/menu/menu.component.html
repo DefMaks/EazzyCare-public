@@ -1,11 +1,10 @@
 <section class="menu">
   <ng-container *ngFor="let item of appGlobal.links">
     <ion-item
-    [href]="[item.url]"
     routerLinkActive="router-link-active"
-    (click)="closeMenu($event)"
+    (click)="closeMenu(item.url,$event)"
     >
-      <ion-icon name="pizza" slot="start"></ion-icon>
+      <!-- <ion-icon name="pizza" slot="start"></ion-icon> -->
       <ion-label>{{item.title}}</ion-label>
     </ion-item>
   </ng-container>

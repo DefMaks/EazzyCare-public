@@ -82,6 +82,8 @@ export class SingleVendorComponent implements OnInit {
   constructor(private popover: PopoverController) {}
 
   ngOnInit() {
+    // console.log(this.singleVendor)
+    // console.log(this.singleVendor?.offers)
     setTimeout(() => {
       this.slider = new KeenSlider(this.sliderRef.nativeElement,{
         initial: 1,
@@ -91,7 +93,7 @@ export class SingleVendorComponent implements OnInit {
           spacing: 15,
         },
       })
-    }, 400);
+    }, 600);
   }
 
   ionWillEnter() {

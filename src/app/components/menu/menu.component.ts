@@ -8,7 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { AppGlobals } from 'src/app/services/app.global';
 
@@ -25,12 +25,14 @@ export class MenuComponent implements OnInit {
 
   constructor(
     public appGlobal: AppGlobals,
-    private popover: PopoverController
+    private popover: PopoverController,
+    private route: Router
   ) {}
 
   ngOnInit() {}
 
-  async closeMenu(ev: Event) {
+  async closeMenu(url:string,ev: Event) {
+    this.route.navigateByUrl(url)
     await this.popover.dismiss();
   }
 }

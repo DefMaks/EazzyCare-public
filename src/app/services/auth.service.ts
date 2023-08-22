@@ -10,8 +10,6 @@ import { AppGlobals } from './app.global';
 // APP CORE DATA
 const vendor_DB = 'vendor';
 const healthservices_DB = 'healthservices';
-const inOfferServices_DB = 'inOfferServices';
-const subscriptions_DB = 'subscriptions';
 // EAZZYCARE DATA
 // Databases
 
@@ -50,15 +48,14 @@ export class AuthService {
     setTimeout(() => {
       console.log('Live reloads open');
       this.listenVendrors();
-    console.log(this.appGlobal)
+      console.log(this.appGlobal);
       // this.appGlobal.serverUpdate = false;
     }, 3500);
   }
 
-
-  async assignations(){
+  async assignations() {
     this.getVendors();
-    return this.appGlobal
+    return this.appGlobal;
   }
 
   async loadUser() {
@@ -119,28 +116,32 @@ export class AuthService {
     return (
       this.supabase
         .from(vendor_DB)
-        .select(`*, type(*)`)
+        .select(
+          `*,
+          type(*),
+          offers(*, inOfferServices(*, healthservice(*))),
+          vendorServices(*, healthService(*))`
+        )
         // .and('isOnline.eq.true, isDriver.eq.true')
         // .match({ isOnline: true, isDriver: true })
         .then((result) => {
           // console.log(result)
-          this.appGlobal.vendors = result.data
-          const cm = this.appGlobal.vendors.filter((item: any) =>{
-            if(item.type.id == 1){
-              return item
+          this.appGlobal.vendors = result.data;
+          const cm = this.appGlobal.vendors.filter((item: any) => {
+            if (item.type.id == 1) {
+              return item;
             }
-          })
+          });
 
-          const insure = this.appGlobal.vendors.filter((item: any) =>{
-            if(item.type.id == 2){
-              return item
+          const insure = this.appGlobal.vendors.filter((item: any) => {
+            if (item.type.id == 2) {
+              return item;
             }
-          })
-          this.appGlobal.insure = insure
-          this.appGlobal.cm = cm
-          return this.appGlobal
+          });
+          this.appGlobal.insure = insure;
+          this.appGlobal.cm = cm;
+          return this.appGlobal;
         })
-        
     );
   }
   async listenVendrors() {
@@ -165,5 +166,42 @@ export class AuthService {
     // console.log(d);
     return d;
   }
-  
+
+  // SERVICES
+  async getServices() {
+    return (
+      this.supabase
+        .from(healthservices_DB)
+        .select(`*`)
+        // .and('isOnline.eq.true, isDriver.eq.true')
+        // .match({ isOnline: true, isDriver: true })
+        .then((result) => {
+          this.appGlobal.healthServices = result.data;
+          return this.appGlobal;
+        })
+    );
+  }
+
+  async listenServices() {
+    const d = this.supabase
+      .channel('custom-all-channel')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: healthservices_DB },
+        (payload) => {
+          console.log('Change received!', payload);
+          // this.appGlobal.serverUpdate = true;
+          console.log('Will refresh SERVICES');
+          setTimeout(() => {
+            this.assignations();
+          }, 500);
+          // console.log(this.appGlobal.users);
+          return this.appGlobal;
+        }
+      )
+      .subscribe();
+
+    // console.log(d);
+    return d;
+  }
 }
